@@ -1,6 +1,6 @@
 #user-email::placeholder {
   color: white;
-  /* -webkit-text-stroke: 5px solid white; */
+  font-family: 'Ogg regular';
 }
 
 input:focus,

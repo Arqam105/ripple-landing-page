@@ -18,7 +18,5 @@ code {
 }
 
 .App {
-    text-align: "auto";
-    /* width: 120vw;
-    height: 100vh; */
-  }
+  text-align: "auto";
+}
