@@ -27,8 +27,8 @@ const Backdrop = () => {
           backgroundPosition: "0px 0px"
         }}
         className="backdrop"
-        dropRadius={20}
-        perturbance={0.0001} //intensity of animation/waves
+        dropRadius={10}
+        perturbance={0.01} //intensity of animation/waves
         interactive={true}
         resolution={512} //animation speed
       >
