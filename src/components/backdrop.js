@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Background from "../images/background.jpg"
 import WaterEffect from "./water-effect"
-import "./backdrop.css"
 
 const Backdrop = () => {
   const containerStyle = {
