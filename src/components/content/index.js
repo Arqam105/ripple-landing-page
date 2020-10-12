@@ -26,11 +26,13 @@ function Content(props) {
     heading2: {
       fontFamily: "Ogg Regular",
       fontSize: "24pt",
-      lineHeight: "normal"
+      lineHeight: "1.2",
+      marginRight: "60px"
     },
     heading3: {
       fontFamily: "Ogg Regular",
-      fontSize: "20pt"
+      fontSize: "18pt",
+      lineHeight: "1.2"
     },
     inputField: {
       background: "rgba(255,255,255,0.3)",
@@ -57,53 +59,66 @@ function Content(props) {
       color: "white",
       border: "0",
       borderBottom: "1px solid white"
+    },
+    content: {
+      height: "220px",
+    },
+    logoStyle: {
+      height: "220px",
+      marginBottom: "22px"
     }
   }
 
   let content
   props.email === "" ? content =
-    <div>
-      <label style={styles.heading2} >Be the first to get access.</label>
-      <div style={styles.inputArea}>
-        <input
-          style={styles.inputField}
-          type="text"
-          id="user-email"
-          placeholder="Email address"
-          onChange={(event) => handleChange(event)}
-        />
+    <div className="container">
+      <div className="row">
+        <div className="col-md-7 d-flex justify-content-center" style={styles.logoStyle}>
+          <img src={Logo} className="img-fluid" style={{ width: "350px", height: "160px" }} />
+        </div>
+        <div className="col-md-3">
+          <div style={styles.content}>
+            <label style={styles.heading2} >Be the first to get access.</label><br /><br />
+            <div style={styles.inputArea}>
+              <input
+                style={styles.inputField}
+                type="text"
+                id="user-email"
+                placeholder="Email address"
+                onChange={(event) => handleChange(event)}
+              />
+            </div><br />
+            <button style={styles.buttonStyle} onClick={() => props.setEmail(input)}>
+              Submit
+            </button>
+          </div>
+        </div>
+        <div className="col-md-2"></div>
       </div>
-      <button
-        style={styles.buttonStyle}
-        className="mt-4"
-        onClick={() => props.setEmail(input)}
-      >
-        Submit
-      </button>
-    </div>
-    : content =
-    <div>
-      <label style={styles.heading2} >Thank you!</label>
-      <label style={styles.heading3} className="mt-1">
-        You'll be the first to get access to our page.
-        We'll be in touch soon
-      </label>
     </div>
 
-  return (
-    <div style={styles.container} className="d-flex align-items-center">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-7 pb-5 d-flex justify-content-center" style={styles.logoStyle}>
-            <img src={Logo} className="img-fluid mt-4" style={{ width: "350px" }} />
-          </div>
-          <div className="col-md-3 mt-5">
-            {content}
-          </div>
-          <div className="col-md-2"></div>
+    : content =
+    <div className="container">
+      <div className="row">
+        <div className="col-md-7 d-flex justify-content-center" style={styles.logoStyle}>
+          <img src={Logo} className="img-fluid" style={{ width: "350px", height: "160px" }} />
         </div>
+        <div className="col-md-3">
+          <div style={styles.content}>
+            <label style={styles.heading2} >Thank you!</label><br /><br />
+            <label style={styles.heading3} >
+              You'll be the first to get access to our page.
+              We'll be in touch soon.
+            </label>
+          </div>
+        </div>
+        <div className="col-md-2"></div>
       </div>
-    </div >
+    </div>
+
+
+  return (
+    <div style={styles.container} className="d-flex align-items-center">{content}</div>
   )
 }
 
