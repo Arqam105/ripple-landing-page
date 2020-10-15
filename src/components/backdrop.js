@@ -27,10 +27,10 @@ const Backdrop = () => {
           backgroundPosition: "0px 0px"
         }}
         className="backdrop"
-        dropRadius={15}
-        perturbance={0.005} //intensity of animation/waves
+        dropRadius={20}
+        perturbance={0.03} //intensity of animation/waves
         interactive={true}
-        resolution={700} //animation speed
+        resolution={256} //animation speed
       >
         {({ drop }) => <button onClick={() => drop(50, 50, 20, 0.05)} />}
       </WaterEffect>
