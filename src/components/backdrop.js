@@ -30,7 +30,7 @@ const Backdrop = () => {
         dropRadius={20}
         perturbance={0.03} //intensity of animation/waves
         interactive={true}
-        resolution={256} //animation speed
+        resolution={512} //animation speed
       >
         {({ drop }) => <button onClick={() => drop(50, 50, 20, 0.05)} />}
       </WaterEffect>
