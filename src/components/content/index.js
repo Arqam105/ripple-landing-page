@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Logo from "../../images/logo.png"
+import Logo from "../../images/living-skin-logo.png"
 import "./content.css"
 
 function Content(props) {
