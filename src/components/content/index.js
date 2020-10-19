@@ -73,10 +73,11 @@ function Content(props) {
   props.email === "" ? content =
     <div className="container">
       <div className="row">
-        <div className="col-md-7 d-flex justify-content-center" style={styles.logoStyle}>
+        <div className="col-md-6 d-flex justify-content-center" style={styles.logoStyle}>
           <img src={Logo} className="img-fluid" style={{ width: "350px", height: "160px" }} />
         </div>
-        <div className="col-md-3">
+        <div className="col-md-1"></div>
+        <div className="col-md-3 ml-2 mr-2">
           <div style={styles.content}>
             <label style={styles.heading2} >Be the first to get access.</label><br /><br />
             <div style={styles.inputArea}>
@@ -103,7 +104,7 @@ function Content(props) {
         <div className="col-md-7 d-flex justify-content-center" style={styles.logoStyle}>
           <img src={Logo} className="img-fluid" style={{ width: "350px", height: "160px" }} />
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 ml-2 mr-2">
           <div style={styles.content}>
             <label style={styles.heading2} >Thank you!</label><br /><br />
             <label style={styles.heading3} >

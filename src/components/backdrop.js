@@ -3,12 +3,12 @@ import Background from "../images/background.jpg"
 import WaterEffect from "./water-effect"
 
 const Backdrop = () => {
+  const [isFront, setIsFront] = useState(false)
+
   const containerStyle = {
     zIndex: "-1",
     overflow: "hidden"
   }
-
-  const [isFront, setIsFront] = useState(false)
 
   useEffect(() => {
     if (window ?? false) {
@@ -24,7 +24,8 @@ const Backdrop = () => {
         style={{
           height: "100vh",
           background: `url(${Background})`,
-          backgroundPosition: "0px 0px"
+          backgroundPosition: "0px 0px",
+          backgroundSize: "cover"
         }}
         className="backdrop"
         dropRadius={20}
