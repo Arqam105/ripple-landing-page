@@ -65,7 +65,7 @@ function Content(props) {
     },
     logoStyle: {
       height: "220px",
-      marginBottom: "22px"
+      marginBottom: "24px"
     }
   }
 
