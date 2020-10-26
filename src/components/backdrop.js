@@ -19,7 +19,7 @@ const Backdrop = () => {
   if (!isFront) return null
 
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} className="ml-n3">
       <WaterEffect
         style={{
           height: "100vh",
