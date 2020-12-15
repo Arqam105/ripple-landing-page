@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import axios from 'axios'
 import Logo from "../../images/living-skin-logo.png"
 import "./content.css"
 
@@ -8,6 +9,24 @@ function Content(props) {
   const handleChange = (event) => {
     setInput(event.target.value)
     console.log(event.target.value)
+  }
+
+  const onSubmit = async (e) => {
+    try {
+      e.preventDefault()
+      const res = await axios.post('https://a.klaviyo.com/api/v2/list/{LIST _ID}/subscribe',
+      {
+        api_key: 'pk_797d9d96b3c8be0180f4c4a739e43fdb39',
+        profiles: [
+          {
+            email: input
+          }
+        ]
+      });
+      console.log('Request successful')
+    } catch (error) {
+      console.error('Error: ', error)
+    }
   }
 
   const styles = {
@@ -80,18 +99,20 @@ function Content(props) {
         <div className="col-md-3 ml-2 mr-2">
           <div style={styles.content}>
             <label style={styles.heading2} >Be the first to get access.</label><br /><br />
-            <div style={styles.inputArea}>
-              <input
-                style={styles.inputField}
-                type="text"
-                id="user-email"
-                placeholder="Email address"
-                onChange={(event) => handleChange(event)}
-              />
-            </div><br />
-            <button style={styles.buttonStyle} onClick={() => props.setEmail(input)}>
-              Submit
-            </button>
+              <form onSubmit={onSubmit}  >
+              <div style={styles.inputArea}>
+                <input
+                  style={styles.inputField}
+                  type="text"
+                  id="user-email"
+                  placeholder="Email address"
+                  onChange={(event) => handleChange(event)}
+                />
+              </div><br />
+              <button type="submit" style={styles.buttonStyle} >
+                Submit
+              </button>
+            </form>
           </div>
         </div>
         <div className="col-md-2"></div>
@@ -117,7 +138,6 @@ function Content(props) {
         <div className="col-md-2"></div>
       </div>
     </div>
-
 
   return (
     <div style={styles.container} className="d-flex align-items-center">{content}</div>
