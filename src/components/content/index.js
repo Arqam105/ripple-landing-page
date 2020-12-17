@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import axios from 'axios'
 import Logo from "../../images/living-skin-logo.png"
+import { Helmet } from "react-helmet"
 import "./content.css"
 
 function Content(props) {
@@ -140,7 +141,12 @@ function Content(props) {
     </div>
 
   return (
-    <div style={styles.container} className="d-flex align-items-center">{content}</div>
+    <div style={styles.container} className="d-flex align-items-center">
+      <Helmet>
+        <title>Living Skin</title>
+      </Helmet>
+      {content}
+    </div>
   )
 }
 

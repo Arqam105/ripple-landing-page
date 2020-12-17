@@ -26,7 +26,7 @@ function SEO({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title="Living Skin"
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
