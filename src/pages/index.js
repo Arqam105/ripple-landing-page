@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Backdrop from "../components/backdrop"
@@ -6,13 +6,11 @@ import Content from "../components/content"
 import "./index.css"
 
 const IndexPage = () => {
-  const [email, setEmail] = useState("") //submitted emails are saved here
-
   return (
     <Layout>
       <SEO title="Living Skin" />
       <div className="App">
-        <Content email={email} setEmail={setEmail} />
+        <Content email={undefined} setEmail={undefined} />
         <Backdrop />
       </div>
     </Layout>
