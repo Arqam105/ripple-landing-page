@@ -88,7 +88,7 @@ function Content() {
   return (
     <div style={styles.container} className="d-flex align-items-center">
       <Helmet>
-        <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=WMSPCB"></script>
+        <script type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=WMSPCB"></script>
         <title>Living Skin</title>
       </Helmet>
       {content}
